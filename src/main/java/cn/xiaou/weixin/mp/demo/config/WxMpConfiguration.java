@@ -33,6 +33,7 @@ public class WxMpConfiguration {
     public WxMpService wxMpService() {
         WxMpServiceImpl wxMpService = new WxMpServiceImpl();
         wxMpService.setConfigStorageFunction((clientId) -> {
+            // TODO 根据自身需要可以读取数据库或者配置文件获取对应公众号的配置
             /*SysSocialClientService socialClientService = SpringUtils.getBean(SysSocialClientService.class);
             SysSocialClientDO socialClient = socialClientService.getOne(Wrappers.lambdaQuery(SysSocialClientDO.class)
                     .eq(SysSocialClientDO::getClientId, clientId)
